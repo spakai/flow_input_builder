@@ -6,7 +6,7 @@ import com.spakai.flow.FlowCInput;
 
 public class FlowCInputBuilder implements Builder<FlowCInput> {
     
-    private FlowBOutput mandatoryflowBOutput;
+    private final FlowBOutput mandatoryflowBOutput;
     private FlowAOutput optionalflowAOutput;
 
     public FlowAOutput getOptionalflowAOutput() {
@@ -27,7 +27,10 @@ public class FlowCInputBuilder implements Builder<FlowCInput> {
         
         FlowCInput input = new FlowCInput();
         input.setMandatoryFromFlowB(mandatoryflowBOutput.getOutput1FromB());
-        input.setOptionalFromFlowA(optionalflowAOutput.getOutput2FromA());
+        
+        if (optionalflowAOutput != null) {
+            input.setOptionalFromFlowA(optionalflowAOutput.getOutput2FromA());
+        }
         
         return input;       
         
