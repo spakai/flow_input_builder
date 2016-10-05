@@ -1,9 +1,4 @@
-package com.spakai.builder;
-
-import com.spakai.flow.SwfInput;
-import com.spakai.flow.SwfOutput;
-import com.spakai.flow.Workflow;
-
+package com.spakai.flow;
 
 public class FlowC implements Workflow {
 
